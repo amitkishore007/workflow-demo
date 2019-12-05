@@ -1,0 +1,75 @@
+[
+    {
+        "title":"Business Information",
+        "slug":"business-info",
+        "order":1,
+        "on_submit":[
+            {
+                "next_step":"owner-info"
+            }
+        ],
+        "form_fields":[
+            {
+                "type":"text",
+                "name":"business_name",
+                "label":"Business Name",
+                "order":1,
+                "value": "",
+                "required": true,
+                "placeholder":"Business Name"
+            },
+            {
+                "type":"text",
+                "name":"business_number",
+                "label":"Business Number",
+                "order":2,
+                "value": "",
+                "required": true,
+                "placeholder":"Business Number"
+            },
+            {
+                "type":"text",
+                "name":"gst_number",
+                "label":"GST Number",
+                "order":2,
+                "value": "",
+                "required": true,
+                "placeholder":"GST Number"
+            }
+        ]
+    },
+    {
+        "title":"Owner Information",
+        "slug":"owner-info",
+        "order":3,
+        "on_submit":[
+            {
+                "next_step":"offer-details"
+            }
+        ],
+        "form_fields":[
+            {
+                "type":"text",
+                "name":"pan_number",
+                "label":"PAN Number",
+                "order":1,
+                "value": "",
+                "required": true,
+                "placeholder":"PAN Number"
+            }
+        ]
+    },
+    {
+        "title":"Offer Details",
+        "slug":"offer-details",
+        "order":4,
+        "on_submit":[
+            {
+                "next_step":null
+            }
+        ],
+        "form_fields":[
+           
+        ]
+    }
+]

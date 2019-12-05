@@ -1,20 +1,29 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container">
+<div class="stepwizard col-md-offset-3 mt-5">
+    <div class="stepwizard-row setup-panel" *ngIf="steps.length">
+      <div class="stepwizard-step" *ngFor="let step of steps;let i = index">
+        <a href="#step-1" type="button" class="btn btn-{{ step.completed ? 'primary':'default' }} btn-circle">{{ i+1 }}</a>
+        <p>{{ step.title }}</p>
+      </div>
+    </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="container">
+<div class="row">
+  <div class="col-sm-12">
+      <div class="card margin-top">
+        <div class="card-header text-center">{{ currentStep?.title }}</div>
+        <div class="card-body">
+            <dynamic-form-builder *ngIf="!finalProcess;else success" (onSubmit)="submitForm($event)" [form]="form" [fields]="fields"></dynamic-form-builder>
+          <ng-template #success>
+            <div class="alert alert-success">
+              Offer Generated successfully!
+            </div>
+          </ng-template>
+          
+          </div>
+      </div>
+    </div>
+</div>
+</div>
